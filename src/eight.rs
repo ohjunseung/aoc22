@@ -10,12 +10,12 @@ pub fn run(input: &str) -> u32 {
             if i == 0 || i == line.len() - 1 {
                 continue;
             }
-            for tmp in (i..line.len()).rev() {
+            for tmp in (i + 1..line.len()).rev() {
                 if line[tmp] >= *v {
                     break;
                 }
                 if tmp == i + 1 {
-                    visible += 1
+                    visible += 1;
                 }
             }
             for tmp in 0..i {
@@ -23,16 +23,16 @@ pub fn run(input: &str) -> u32 {
                     break;
                 }
                 if tmp == i - 1 {
-                    visible += 1
+                    visible += 1;
                 }
             }
 
-            for tmp in (j..trees.len()).rev() {
+            for tmp in (j + 1..trees.len()).rev() {
                 if trees[j][i] >= *v {
                     break;
                 }
                 if tmp == j + 1 {
-                    visible += 1
+                    visible += 1;
                 }
             }
             for tmp in 0..j {
@@ -40,7 +40,7 @@ pub fn run(input: &str) -> u32 {
                     break;
                 }
                 if tmp == j - 1 {
-                    visible += 1
+                    visible += 1;
                 }
             }
         }
